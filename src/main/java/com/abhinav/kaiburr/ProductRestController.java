@@ -1,6 +1,5 @@
 package com.abhinav.kaiburr;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +31,7 @@ public class ProductRestController {
         return "404 No Product Found";
     }
 
-    @GetMapping("/id={id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getProductbyId(@PathVariable() Integer id){
             if(os.isPresent(id)){
                 OSSystem o = os.getOSbyId(id);
